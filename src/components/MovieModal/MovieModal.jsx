@@ -1,9 +1,10 @@
 import React from 'react';
+import MovieDetails from './MovieDetails/MovieDetails.jsx';
 
-const MovieModal = () => {
+const MovieModal = ({ show, onClose, children }) => {
     return (
         <div>
-
+            <MovieDetails />
         </div>
     )
 }
