@@ -22,7 +22,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build && cp build/index.html build/404.html"
-
   },
   "eslintConfig": {
     "extends": [
@@ -43,4 +42,3 @@
     ]
   }
 }
-

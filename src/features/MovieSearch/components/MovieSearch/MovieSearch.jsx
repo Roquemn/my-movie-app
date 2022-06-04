@@ -1,14 +1,21 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
-import "./styles.css";
-import MovieCard from "../MovieCard/MovieCard";
+import React, { useState } from "react";
+import styled from "styled-components";
 import axios from "axios";
 
-const LandingPage = () => {
-  const [movie, setMovie] = useState("");
+const SubmitButton = styled.button`
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+
+  &:hover {
+    background-color: #054cda;
+  }
+`;
+
+const MovieSearch = ({ setMovie }) => {
   const [movieName, setMovieName] = useState("");
-  const nameInput = React.createRef();
-  const idInput = React.createRef();
   const apiKey = "af87555";
 
   const getMoviesByName = async (name) => {
@@ -25,28 +32,22 @@ const LandingPage = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const name = nameInput.current.value;
-    console.log(name);
-    getMoviesByName(name);
+    getMoviesByName(movieName);
   };
 
   return (
-    <div className="landing-container">
-      <h1>Welcome to my movie app!</h1>
+    <div>
       <form>
         <input
           type="text"
           placeholder="Movie Name"
-          ref={nameInput}
+          value={movieName}
+          onChange={(e) => setMovieName(e.currentTarget.value)}
         />
-        <button onClick={onSubmit}>Submit</button>
+        <SubmitButton onClick={onSubmit}>Submit</SubmitButton>
       </form>
-      <div>
-        <MovieCard movieData={movie} />
-      </div>
     </div>
   );
 };
 
-export default LandingPage;
-
+export default MovieSearch;

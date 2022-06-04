@@ -13,6 +13,7 @@ const MovieCard = ({ movieData }) => {
           Type={movieData.Type}
           Poster={movieData.Poster}
           Plot={movieData.Plot}
+          Actors={movieData.Actors}
         />
       )}
     </div>

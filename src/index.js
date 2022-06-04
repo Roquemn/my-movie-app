@@ -1,12 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-// import App from './App';
-import './index.css';
-import LandingPage from './components/LandingPage/LandingPage';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import LandingPage from "./features/MovieSearch/pages/LandingPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <React.StrictMode>
-        <LandingPage />
-    </React.StrictMode>
+  <React.StrictMode>
+    <LandingPage />
+  </React.StrictMode>
 );
